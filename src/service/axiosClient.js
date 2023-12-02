@@ -7,6 +7,7 @@ import { setErrorMessageAction, setSuccessMessageAction } from "../redux/actions
 export const axiosClient = axios.create({
     baseURL: 'https://api.utsavchatterjee.me/api/v1',
     withCredentials: true,
+
 });
 
 axiosClient.interceptors.response.use(res => {
