@@ -2,10 +2,16 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { loginClient } from '../service/auth/login'
 import LoadingBtn from '../components/loadingBtn'
+import { useSelector } from 'react-redux'
+import SuccessToaster from '../components/toaster/Success'
+import ErrorToaster from '../components/toaster/Error'
 
 
 
 const Login = () => {
+
+  const success=useSelector(state=>state.messageReducer.success);
+  const error=useSelector(state=>state.messageReducer.error)
 
   const [creds,setCreds]=useState({
     username:"",
@@ -27,6 +33,8 @@ const Login = () => {
 
   return (
     <>
+        <SuccessToaster message={success}/>
+        <ErrorToaster message={error}/>
       <section className="bg-gray-50 dark:bg-gray-900">
   <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
 

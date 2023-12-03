@@ -58,7 +58,7 @@ function PostCard({post}) {
     <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
       {Shortner(post?.about,30)}
     </h5>
-    {post?.post_meta[0].file_name?<div className="mb-3 flex gap-1 flex-wrap">
+    {post?.post_meta[0]?.file_name?<div className="mb-3 flex gap-1 flex-wrap">
         {post.post_meta.map((i,k)=>
             <PostChips post_id={post?.post_id} meta={i} key={k}/>
         )}
