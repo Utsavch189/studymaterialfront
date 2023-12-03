@@ -6,6 +6,7 @@ import { ContextProvider } from '../../page/Section';
 import EditSectionModal from './EditSectionModal';
 import { useDispatch } from 'react-redux';
 import { setUpdateSectionAction } from '../../redux/actions/section';
+import Shortner from '../../utils/stringShort';
 
 
 function SectionCards({data}) {
@@ -52,7 +53,7 @@ function SectionCards({data}) {
          <img src={logo} alt="" />
         </div>
         <h2 className="text-black text-lg font-medium">
-          {data?.section_name.toUpperCase()}
+          {Shortner(data?.section_name.toUpperCase(),20)}
         </h2>
         <button 
            >
@@ -63,7 +64,7 @@ function SectionCards({data}) {
       </div>
       <div className="flex flex-col justify-between flex-grow">
         {data?.section_about?<p className="leading-relaxed text-base text-black">
-          {data?.section_about}
+          {Shortner(data?.section_about,25)}
         </p>:<p className="leading-relaxed text-base text-black">None</p>
         }
 

@@ -55,12 +55,11 @@ function Landing() {
       </div>
       <div className="relative">
         <h1 className="inline-flex font-extrabold text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">
-          Interactive Particle Animation
+          Datahub
         </h1>
         <div className="max-w-3xl mx-auto mb-8">
           <p className="text-lg text-slate-400">
-            Our landing page template works on all devices, so you only have to
-            set it up once, and get beautiful results forever.
+          Transforming Ideas into Impact: Elevate Your Experience with <b>Datahub</b> Where Innovation Meets Intuition!
           </p>
         </div>
         <div className="inline-flex justify-center space-x-4">

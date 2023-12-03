@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { deletePostMetaClient } from '../../service/posts/deletePostMeta'
 import { PostProvider } from '../../page/Post'
+import Shortner from '../../utils/stringShort';
 
 function PostChips({meta,post_id}) {
 
@@ -28,7 +29,7 @@ function PostChips({meta,post_id}) {
   data-te-ripple-color="dark"
 >
 <a href={meta?.file_url} target='_blank'>
-  {meta?.file_name}
+  {Shortner(meta?.file_name,11)}
   </a>
   <span
     data-te-chip-close=""

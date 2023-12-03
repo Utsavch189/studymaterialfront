@@ -7,6 +7,7 @@ import { deletePostsClient } from '../../service/posts/deletePost';
 import { PostProvider } from '../../page/Post';
 import EditPostModal from './EditPostModal';
 import { setUpdatePostAction } from '../../redux/actions/post';
+import Shortner from '../../utils/stringShort';
 
 function PostCard({post}) {
 
@@ -49,13 +50,13 @@ function PostCard({post}) {
       <div className="block p-10 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
   <div className='flex items-center justify-between'>
   <h5 className="border-b-2 border-neutral-100 px-6 py-3 text-xl font-medium leading-tight dark:border-neutral-600 dark:text-neutral-50">
-    {post?.title} [{post?.visibility==='PRIVATE'?<i className="fa-solid fa-lock"></i>:post?.visibility==='PUBLIC'?<i className="fa-solid fa-lock-open"></i>:<></>}]
+    {Shortner(post?.title,12)} [{post?.visibility==='PRIVATE'?<i className="fa-solid fa-lock"></i>:post?.visibility==='PUBLIC'?<i className="fa-solid fa-lock-open"></i>:<></>}]
   </h5>
   <i className="fa-solid fa-trash" style={{color:"red",cursor:"pointer"}} onClick={()=>handelDelete(post?.post_id)}></i>
   </div>
   <div className="p-6">
     <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-      {post?.about}
+      {Shortner(post?.about,30)}
     </h5>
     {post?.post_meta[0].file_name?<div className="mb-3 flex gap-1 flex-wrap">
         {post.post_meta.map((i,k)=>
